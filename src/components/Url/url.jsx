@@ -14,14 +14,14 @@ const Url = ({ original, shortened }) => {
       <div className="line-clamp-1">
         <Title
           title={original}
-          size={"text-[1.29rem] max-lg:text-xl"}
+          size={"text-[1.2rem] max-lg:text-xl"}
           weight={"font-medium"}
         />
       </div>
       <div className="flex items-center justify-center gap-8 min-w-fit ">
         <Title
           title={shortened}
-          size={"text-[1.29rem] max-lg:text-xl"}
+          size={"text-[1.2rem] max-lg:text-xl"}
           weight={"font-medium"}
           color={"text-main"}
         />
