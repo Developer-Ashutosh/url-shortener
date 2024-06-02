@@ -5,8 +5,8 @@ const Url = ({ original, shortened }) => {
   const [canCopy, setCanCopy] = useState(false);
   const copy = () => setCanCopy(true);
   useEffect(() => {
-    navigator.clipboard.writeText(shortened);
-    return () => setTimeout(() => setCanCopy(false), 60000);
+    canCopy && navigator.clipboard.writeText(shortened);
+    return () => setTimeout(() => setCanCopy(false), 7000);
   }, [canCopy]);
 
   return (

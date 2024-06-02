@@ -13,20 +13,24 @@ const Shortener = () => {
         onSubmit={(e) => {
           e.preventDefault();
           if (url.length !== 0) {
-            fetch("https://cleanuri.com/api/v1/shorten", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-              },
-              body: `url=${encodeURIComponent(url)}`,
-            })
+            fetch(
+              "https://cors-anywhere.herokuapp.com/https://cleanuri.com/api/v1/shorten",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: `url=${encodeURIComponent(url)}`,
+              }
+            )
               .then((response) => response.json())
-              .then(({ result_url }) =>
+              .then(({ result_url }) => {
                 setUrls((urls) => [
-                  ...urls,
                   { original: url, shortened: result_url },
-                ])
-              )
+                  ...urls,
+                ]);
+                setUrl("");
+              })
               .catch((error) => console.error("Error:", error));
           }
         }}
