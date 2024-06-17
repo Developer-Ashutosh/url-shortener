@@ -14,7 +14,7 @@ const Shortener = () => {
           e.preventDefault();
           if (url.length !== 0) {
             fetch(
-              "https://cors-anywhere.herokuapp.com/https://cleanuri.com/api/v1/shorten",
+              "https://cleanuri.com/api/v1/shorten",
               {
                 method: "POST",
                 headers: {
